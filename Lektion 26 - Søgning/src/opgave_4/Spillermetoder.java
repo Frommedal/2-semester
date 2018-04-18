@@ -108,6 +108,32 @@ public class Spillermetoder {
         }
         return spillere;
     }
+
+    public ArrayList<Spiller> godSpiller(ArrayList<Spiller> spillere) {
+        ArrayList<Spiller> spillereNy = new ArrayList<>();
+        boolean found = false;
+        boolean found2 = false;
+        int i = 0;
+
+        while (!found) {
+            while (i < spillere.size()) {
+                if (spillere.get(i).getMaal() >= 50 && spillere.get(i).getHoejde() <= 170) {
+                    // spiller = spillere.get(i);
+                    spillereNy.add(spillere.get(i));
+                    i++;
+                    found2 = true;
+                } else {
+                    i++;
+                }
+            }
+            if (found2) {
+                found2 = false;
+            } else if (i == spillere.size() && !found2) {
+                found = true;
+            }
+        }
+        return spillereNy;
+    }
 }
 
 // Her tilføjes metoder der løser opgve 4.2 og 4.3

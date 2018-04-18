@@ -1,7 +1,5 @@
 package opgave_4;
 
-import java.util.Comparator;
-
 public class Spiller {
     private String navn;
     private int hojde;
