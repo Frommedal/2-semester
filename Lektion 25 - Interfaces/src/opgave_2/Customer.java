@@ -82,6 +82,8 @@ public class Customer implements Comparable<Customer> {
         // }
         // return null;
 
+        // dur ikke.
+
         Customer[] sorted = customers.clone();
         Arrays.sort(sorted);
 
