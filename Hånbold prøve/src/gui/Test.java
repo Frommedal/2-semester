@@ -1,12 +1,20 @@
 package gui;
 
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Kamp;
@@ -16,9 +24,10 @@ import service.Service;
 public class Test extends Application {
 
     private ListView<Kamp> lvwKampe;
-    private Button btnOpret;
-    private Button btnUpdate;
-    private Button btnLavFil;
+    private Button btnOpret, btnUpdate, btnLavFil, btnUpdateList;
+    private TextField txfSted, txfDato, txfTid;
+    private DatePicker dpiDato;
+    private Alert alarm;
 
     public static void main(String[] args) {
         Application.launch(args);
@@ -52,20 +61,78 @@ public class Test extends Application {
         lvwKampe = new ListView<>();
         pane.add(lvwKampe, 0, 1);
         lvwKampe.setPrefHeight(200);
+        lvwKampe.setPrefWidth(200);
         lvwKampe.getItems().setAll(Service.getKampe());
 
-        ChangeListener<Kamp> listener = (ov, oldKamp, newKamp) ->
-        // selectedFieldTrip(); // listener skal laves for at button nedenunder virker
+        ChangeListener<Kamp> listener = (ov, oldKamp, newKamp) -> getTextFields();
+        lvwKampe.getSelectionModel().selectedItemProperty().addListener(listener);
 
         btnOpret = new Button("Opret ");
 
         btnLavFil = new Button("Lav fil");
-        pane.add(btnLavFil, 1, 0);
-        btnLavFil.setOnAction(event -> Kamp.spillerHonorar(listener)); // den her!
+        pane.add(btnLavFil, 1, 1);
+        // btnLavFil.setOnAction(event -> Kamp.spillerHonorar("output.txt"));
+
+        btnUpdateList = new Button("Opdater kamp liste"); // giver somehow null pointer - find ud af hvorfor.
+        pane.add(btnUpdateList, 1, 0);
+        btnUpdateList.setOnAction(event -> lvwKampe.getItems().setAll(Service.getKampe()));
+
+        btnUpdate = new Button("Opdater kamp");
+        pane.add(btnUpdate, 2, 1);
+        btnUpdate.setPrefWidth(100);
+        btnUpdate.setOnAction(event -> updateTextFields());
+
+        btnOpret = new Button("Opret kamp");
+        pane.add(btnOpret, 3, 1);
+        btnOpret.setPrefWidth(100);
+        btnOpret.setOnAction(event -> createNewKamp());
+
+        Label lblSted = new Label("Spillested:");
+        pane.add(lblSted, 0, 2);
+
+        txfSted = new TextField();
+        pane.add(txfSted, 1, 2);
+
+        Label lblDato = new Label("Spilledato");
+        pane.add(lblDato, 0, 3);
+
+        dpiDato = new DatePicker();
+        pane.add(dpiDato, 1, 3);
+
+        Label lblTid = new Label("Spilletid");
+        pane.add(lblTid, 0, 4);
+
+        txfTid = new TextField();
+        pane.add(txfTid, 1, 4);
+
     }
 
-    private void selectedFieldTrip() { // den her skal laves til listeneren ovenover!
+    private void getTextFields() {
         Kamp kamp = lvwKampe.getSelectionModel().getSelectedItem();
+        this.txfSted.setText(kamp.getSted());
+        dpiDato.setValue((kamp.getDato()));
+        this.txfTid.setText(kamp.getTid().toString());
     }
 
+    private void updateTextFields() {
+        if (txfSted != null) {
+            LocalTime tid = LocalTime.parse(txfTid.getText());
+            Kamp kamp = lvwKampe.getSelectionModel().getSelectedItem();
+            kamp.setSted(txfSted.getText());
+            kamp.setDato(dpiDato.getValue());
+            kamp.setTid(tid);
+        } else {
+            alarm = new Alert(AlertType.ERROR);
+
+            alarm.setTitle("Dumhed");
+            alarm.setHeaderText("Intet valgt");
+            alarm.setContentText("For at opdatere en kamp skal du først vælge en kamp og derefter ændre i værdierne.");
+            alarm.showAndWait();
+        }
+    }
+
+    private void createNewKamp() {
+        LocalTime tid = LocalTime.parse(txfTid.getText());
+        Service.createKamp(txfSted.getText(), dpiDato.getValue(), tid);
+    }
 }
