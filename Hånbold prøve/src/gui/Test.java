@@ -54,19 +54,18 @@ public class Test extends Application {
         lvwKampe.setPrefHeight(200);
         lvwKampe.getItems().setAll(Service.getKampe());
 
-        ChangeListener<Kamp> listener = new (ov, oldKamp, newFieldTrip) -> selectedFieldTrip(); // listener skal laves for at button nedenunder virker
-
+        ChangeListener<Kamp> listener = (ov, oldKamp, newKamp) ->
+        // selectedFieldTrip(); // listener skal laves for at button nedenunder virker
 
         btnOpret = new Button("Opret ");
 
         btnLavFil = new Button("Lav fil");
         pane.add(btnLavFil, 1, 0);
-        btnLavFil.setOnAction(event -> Kamp.spillerHonorar()); // den her!
+        btnLavFil.setOnAction(event -> Kamp.spillerHonorar(listener)); // den her!
     }
 
-    private Object selectedFieldTrip() { // den her skal laves til listeneren ovenover!
-        // TODO Auto-generated method stub
-        return null;
+    private void selectedFieldTrip() { // den her skal laves til listeneren ovenover!
+        Kamp kamp = lvwKampe.getSelectionModel().getSelectedItem();
     }
 
 }
