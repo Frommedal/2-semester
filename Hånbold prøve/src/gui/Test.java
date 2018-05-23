@@ -1,9 +1,6 @@
 package gui;
 
-import java.sql.Time;
-import java.time.LocalDate;
 import java.time.LocalTime;
-
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.geometry.Insets;
@@ -18,7 +15,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Kamp;
-import model.Spiller;
 import service.Service;
 
 public class Test extends Application {
