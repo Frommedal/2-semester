@@ -71,7 +71,7 @@ public class Test extends Application {
 
         btnUpdateList = new Button("Opdater kamp liste"); // giver somehow null pointer - find ud af hvorfor.
         pane.add(btnUpdateList, 1, 0);
-        btnUpdateList.setOnAction(event -> lvwKampe.getItems().setAll(Service.getKampe()));
+        btnUpdateList.setOnAction(event -> updateKampe());
 
         btnUpdate = new Button("Opdater kamp");
         pane.add(btnUpdate, 2, 1);
@@ -105,9 +105,16 @@ public class Test extends Application {
 
     private void getTextFields() {
         Kamp kamp = lvwKampe.getSelectionModel().getSelectedItem();
-        this.txfSted.setText(kamp.getSted());
-        dpiDato.setValue((kamp.getDato()));
-        this.txfTid.setText(kamp.getTid().toString());
+        if (kamp != null) {
+            this.txfSted.setText(kamp.getSted());
+            dpiDato.setValue((kamp.getDato()));
+            this.txfTid.setText(kamp.getTid().toString());
+        } else { // når du prøver at opdatere et object i en liste og så smider en ny liste så
+                 // listeneren ikke kan finde den ting den plejede at finde i listen og giver
+                 // null pointer exception.
+            txfSted.clear();
+            txfTid.clear();
+        }
     }
 
     private void updateTextFields() {
@@ -133,6 +140,6 @@ public class Test extends Application {
     }
 
     private void updateKampe() {
-
+        lvwKampe.getItems().setAll(Service.getKampe());
     }
 }
