@@ -13,6 +13,12 @@ public class Deltagelse {
         spiller.addDeltagelse(this);
     }
 
+    public Deltagelse(String begundelse) {
+        this.afbud = false;
+        this.begrundelse = begundelse;
+        this.spiller = null;
+    }
+
     public boolean isAfbud() {
         return afbud;
     }

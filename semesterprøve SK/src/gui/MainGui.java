@@ -23,9 +23,9 @@ import service.Service;
 public class MainGui extends Application {
 
     private ListView<Guest> lvwGuests;
-    private ListView<OrderLine> lvwOrderLines;
+    private ListView<String> lvwOrderLines;
     private TextField txfName, txfRoomNumber;
-    private Button btnCreate, btnUpdate;
+    private Button btnCreate, btnUpdate, btnShow;
     private Alert alarm;
     private Listener listener;
 
@@ -64,6 +64,11 @@ public class MainGui extends Application {
         lvwGuests.setPrefWidth(200);
         lvwGuests.getItems().setAll(Service.getGuests());
 
+        lvwOrderLines = new ListView<>();
+        pane.add(lvwOrderLines, 2, 5);
+        lvwOrderLines.setPrefHeight(200);
+        lvwOrderLines.setPrefWidth(200);
+
         ChangeListener<Guest> listener = (ov, oldGuest, newGuest) -> showTextFields();
         lvwGuests.getSelectionModel().selectedItemProperty().addListener(listener);
 
@@ -89,42 +94,37 @@ public class MainGui extends Application {
         btnUpdate.setPrefWidth(125);
         btnUpdate.setOnAction(event -> updateGuest());
 
-        // btnOpret = new Button("Opret kamp");
-        // pane.add(btnOpret, 3, 1);
-        // btnOpret.setPrefWidth(100);
-        // btnOpret.setOnAction(event -> createNewKamp());
-        //
-        // Label lblSted = new Label("Spillested:");
-        // pane.add(lblSted, 0, 2);
-        //
-        // txfSted = new TextField();
-        // pane.add(txfSted, 1, 2);
+        btnShow = new Button("Vis");
+        pane.add(btnShow, 2, 4);
+        btnShow.setPrefWidth(125);
+        btnShow.setOnAction(event -> showNotPaidOrders());
     }
 
     // -------------------------------------------------------------------------
 
     private void showTextFields() {
-        try {
+        int index = lvwGuests.getSelectionModel().getSelectedIndex();
+        if (index >= 0) {
             Guest guest = lvwGuests.getSelectionModel().getSelectedItem();
             this.txfName.setText(guest.getName());
             this.txfRoomNumber.setText("" + guest.getRoomNumber());
-        } catch (NullPointerException e) {
-            System.out.println("Torbens fejl" + e.getMessage());
         }
-
     }
 
     private void createNewGuest() {
         Service.createGuest(txfName.getText(), Integer.parseInt(txfRoomNumber.getText()));
-        // her skal den resette listeneren da vi fanger en ny liste herunder og så ved
-        // listeneren ikke hvor den skal kigge.
-        // lvwGuests.removeListener(listener);
         lvwGuests.getItems().setAll(Service.getGuests());
     }
 
     private void updateGuest() {
-        Service.updateGuest(lvwGuests.getSelectionModel().getSelectedItem(), txfName.getText(),
-                Integer.parseInt(txfRoomNumber.getText()));
+        Guest g = lvwGuests.getSelectionModel().getSelectedItem();
+        g.setName(txfName.getText());
+        g.setRoomNumber(Integer.parseInt(txfRoomNumber.getText()));
         lvwGuests.getItems().setAll(Service.getGuests());
+    }
+
+    private void showNotPaidOrders() {
+        Guest g = lvwGuests.getSelectionModel().getSelectedItem();
+        lvwOrderLines.getItems().setAll(g.notPaidOrders());
     }
 }

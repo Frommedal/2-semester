@@ -29,6 +29,10 @@ public class Spiller {
         this.aargang = aargang;
     }
 
+    public ArrayList<Deltagelse> getDeltagelser() {
+        return deltagelser;
+    }
+
     // opgave s2
     public double getHonorar() {
         int deltagelse = 0;

@@ -65,6 +65,24 @@ public class Service {
 
     // -------------------------------------------------------------------------
 
+    // Opgave S7.
+
+    /**
+     * Opdaterer sammenhængen mellem spiller og deltagelse så de linker til hinanden
+     * Precondition: spiller != null og deltagelse != null
+     */
+    public static void updateSpillerDeltagelse(Spiller spiller, Deltagelse deltagelse) {
+        if (spiller != null && deltagelse != null) {
+            if (!spiller.getDeltagelser().contains(deltagelse)) {
+                spiller.addDeltagelse(deltagelse);
+                deltagelse.setSpiller(spiller);
+            }
+        }
+
+    }
+
+    // -------------------------------------------------------------------------
+
     // Opgave S9.
     public static ArrayList<Kamp> alleKampe(ArrayList<Kamp> list1, ArrayList<Kamp> list2) {
         ArrayList<Kamp> resultat = new ArrayList<>();
@@ -106,7 +124,8 @@ public class Service {
         Kamp k1 = Service.createKamp("Herning", LocalDate.of(2015, 01, 26), LocalTime.of(10, 30));
         Kamp k2 = Service.createKamp("Ikast", LocalDate.of(2015, 01, 27), LocalTime.of(13, 30));
 
-        Deltagelse d1 = k1.opretDeltagelse(s1);
+        Deltagelse d1 = new Deltagelse(s1);
+        updateSpillerDeltagelse(s1, d1);
         Deltagelse d2 = k1.opretDeltagelse(s2);
         Deltagelse d3 = k1.opretDeltagelse(s3);
         Deltagelse d4 = k1.opretDeltagelse(ps1);

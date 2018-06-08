@@ -131,4 +131,8 @@ public class Test extends Application {
         LocalTime tid = LocalTime.parse(txfTid.getText());
         Service.createKamp(txfSted.getText(), dpiDato.getValue(), tid);
     }
+
+    private void updateKampe() {
+
+    }
 }
