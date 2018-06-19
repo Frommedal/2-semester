@@ -1,7 +1,6 @@
 package opgave_3;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import opgave_3.Customer;
 

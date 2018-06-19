@@ -2,8 +2,6 @@ package opgave_1;
 
 import java.util.ArrayList;
 
-import group01_personmany.Person;
-
 public class Rental {
 
     private int number;
@@ -12,8 +10,8 @@ public class Rental {
     private ArrayList<Car> cars = new ArrayList<>();
 
     public Rental(int number, String date, int days) {
-        this.number = number;
-        this.date = date;
+        this.setNumber(number);
+        this.setDate(date);
         this.days = days;
 
     }
@@ -51,4 +49,20 @@ public class Rental {
         cars.add(car);
         return car;
     }
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 }

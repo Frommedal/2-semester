@@ -2,10 +2,8 @@ package service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-
 import model.Guest;
 import model.Order;
-import model.OrderLine;
 import storage.Storage;
 import model.Item;
 
@@ -18,8 +16,8 @@ public class Service {
         Item i4 = createItem("Øl", "Carlsberg", 0.57, 48.0);
 
         Guest g1 = createGuest("Ib", 17);
-        Guest g2 = createGuest("Eva", 12);
-        Guest g3 = createGuest("Lene", 8);
+        //Guest g2 = createGuest("Eva", 12);
+        //Guest g3 = createGuest("Lene", 8);
 
         Order o1 = createOrder(g1, LocalDate.of(2014, 06, 15));
         Order o2 = createOrder(g1, LocalDate.of(2014, 06, 16));

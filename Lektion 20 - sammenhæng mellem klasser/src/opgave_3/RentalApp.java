@@ -14,6 +14,10 @@ public class RentalApp {
         Rental r1 = new Rental(100, "20/03-2018", 5);
         Rental r2 = new Rental(101, "21/03-2018", 10);
 
+        r2.addCar(ffiesta);
+        r2.addCar(multipla);
+        r2.addCar(wagonR);
+        
         r1.addCar(f500);
         r1.addCar(taunus);
 

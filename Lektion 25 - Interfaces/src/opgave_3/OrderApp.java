@@ -12,9 +12,9 @@ public class OrderApp {
 
         Customer customer1 = new Customer("Henrik", LocalDate.parse("1996-01-01"));
         Customer customer2 = new Customer("Martin", LocalDate.parse("1984-01-01"));
-        int agec1 = LocalDate.now().getYear() - customer1.getBirthday().getYear();
+        //int agec1 = LocalDate.now().getYear() - customer1.getBirthday().getYear();   // gav en gul satan, derfor udkommenteret
         int agec2 = LocalDate.now().getYear() - customer2.getBirthday().getYear();
-
+        
         Order order1 = new Order(1);
         // Order order2 = new Order(2);
 
@@ -34,7 +34,7 @@ public class OrderApp {
         System.out.println(order1.getOrderPrice());
 
         Discount percentDiscount = new PercentDiscount(order1.getOrderPrice());
-        Discount fixedDiscount = new FixedDiscount(order1.getOrderPrice());
+        //Discount fixedDiscount = new FixedDiscount(order1.getOrderPrice());  // gav en gul satan, derfor udkommenteret
         Discount ageDiscount = new AgeDiscount(order1.getOrderPrice(), agec2);
         customer2.setDiscount(ageDiscount);
         customer1.setDiscount(percentDiscount);

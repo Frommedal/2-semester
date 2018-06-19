@@ -5,7 +5,7 @@ public class Gift {
     private double price = 0.0;
 
     public Gift(String description) {
-        this.description = description;
+        this.setDescription(description);
     }
 
     public void setPrice(double price) {
@@ -15,4 +15,12 @@ public class Gift {
     public double getPrice() {
         return price;
     }
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }

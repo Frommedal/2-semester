@@ -3,11 +3,11 @@ package adminsystem;
 public class Spiller {
 
     private String navn;
-    private int årgang;
+    private int yearOfBirth;
 
-    public Spiller(String navn, int årgang) {
+    public Spiller(String navn, int yearOfBirth) {
         this.navn = navn;
-        this.årgang = årgang;
+        this.yearOfBirth = yearOfBirth;
     }
 
     public String getNavn() {
@@ -18,12 +18,12 @@ public class Spiller {
         this.navn = navn;
     }
 
-    public int getÅrgang() {
-        return årgang;
+    public int getYearOfBirth() {
+        return yearOfBirth;
     }
 
-    public void setÅrgang(int årgang) {
-        this.årgang = årgang;
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
     }
 
     public double kampHonorar(Spiller spiller) {

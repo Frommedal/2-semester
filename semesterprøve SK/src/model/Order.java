@@ -14,7 +14,7 @@ public class Order implements Value {
     public Order(Guest guest, LocalDate date) {
         this.date = date;
         this.paid = false;
-        this.guest = guest;
+        this.setGuest(guest);
         guest.addOrder(this);
     }
 
@@ -58,5 +58,21 @@ public class Order implements Value {
         }
         return totalValue;
     }
+
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
+	}
+
+	public Guest getGuest() {
+		return guest;
+	}
+
+	public void setGuest(Guest guest) {
+		this.guest = guest;
+	}
 
 }

@@ -1,7 +1,5 @@
 package yatzy;
 
-import java.util.Random;
-
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -16,7 +14,6 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
@@ -43,7 +40,6 @@ public class MainApp extends Application {
     private TextField[] txfValues;
     // Shows the hold status of the 5 dice.
     private CheckBox[] chbHolds;
-    private TextField[] txfResults;
     private TextField[] txfscores;
     private TextField txfSumNum, txfBonus, txfSumOther, txfTotal;
     private Label lblRolled;

@@ -1,7 +1,5 @@
 package sorteringAfArrayList;
 
-import java.util.Comparator;
-
 public class Spiller {
     private String navn;
     private int hojde;

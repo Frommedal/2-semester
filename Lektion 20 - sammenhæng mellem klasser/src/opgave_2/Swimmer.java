@@ -2,8 +2,6 @@ package opgave_2;
 
 import java.util.*;
 
-import aggregation_group01_personmany.Person;
-
 /**
  * Modeling a Swimmer
  */
@@ -13,7 +11,6 @@ public class Swimmer {
     private int yearGroup;
     private ArrayList<Double> lapTimes;
     private TrainingPlan tp;
-    private ArrayList<String> swimmers;
 
     /**
      * Initialize a new swimmer with name, club, yearGroup, and lap times.

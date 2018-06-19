@@ -1,23 +1,16 @@
 package gui;
 
-import java.time.LocalTime;
-
-import javax.xml.bind.Marshaller.Listener;
-
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import model.Guest;
-import model.OrderLine;
 import service.Service;
 
 public class MainGui extends Application {
@@ -26,9 +19,7 @@ public class MainGui extends Application {
     private ListView<String> lvwOrderLines;
     private TextField txfName, txfRoomNumber;
     private Button btnCreate, btnUpdate, btnShow;
-    private Alert alarm;
-    private Listener listener;
-
+    
     public static void main(String[] args) {
         Application.launch(args);
     }

@@ -2,7 +2,6 @@ package opgave_10_4;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.ArrayList;
 

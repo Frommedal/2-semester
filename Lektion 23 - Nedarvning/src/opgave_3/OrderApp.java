@@ -6,7 +6,7 @@ public class OrderApp {
     public static void main(String[] args) {
         Product product1 = new Product(201, "Gule handsker i valgfri farve", 300.0);
         Product product2 = new Product(202, "Israeler trompet", 2200.0);
-        Product product3 = new Product(203, "Badalaika mel", 400.0);
+        Product product3 = new Product(203, "Badalaika mel", 500.0);
         Product product4 = new Product(204, "Jubel krudt", 400.0);
         Product product5 = new Product(205, "Mongol benzin", 50.0);
 
@@ -21,6 +21,8 @@ public class OrderApp {
         order1.createOrderLine(1, product3);
         order1.createOrderLine(1, product4);
         order1.createOrderLine(1, product5);
+        
+        order2.createOrderLine(5, product4);
 
         customer1.addOrder(order1);
         // customer1.addOrder(order2);

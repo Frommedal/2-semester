@@ -15,7 +15,7 @@ public class Kamp {
         this.sted = sted;
         this.dato = dato;
         this.tid = tid;
-        this.deltagelse = deltagelse;
+        this.setDeltagelse(deltagelse);
     }
 
     public String getSted() {
@@ -41,5 +41,21 @@ public class Kamp {
     public void setTid(LocalTime tid) {
         this.tid = tid;
     }
+
+	public Deltagelse getDeltagelse() {
+		return deltagelse;
+	}
+
+	public void setDeltagelse(Deltagelse deltagelse) {
+		this.deltagelse = deltagelse;
+	}
+
+	public ArrayList<Deltagelse> getDeltagelser() {
+		return deltagelser;
+	}
+
+	public void setDeltagelser(ArrayList<Deltagelse> deltagelser) {
+		this.deltagelser = deltagelser;
+	}
 
 }

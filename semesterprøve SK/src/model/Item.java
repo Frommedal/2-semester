@@ -58,7 +58,8 @@ public class Item {
         this.orderlines.add(orderline);
     }
 
-    private void removeOrderLines(OrderLine orderline) {
+    @SuppressWarnings("unused")
+	private void removeOrderLines(OrderLine orderline) {
         this.orderlines.remove(orderline);
     }
 

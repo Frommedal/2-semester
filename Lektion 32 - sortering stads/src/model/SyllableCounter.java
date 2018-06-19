@@ -17,5 +17,7 @@ public class SyllableCounter {
 			int syllables = w.countSyllables();
 			System.out.println("Syllables in " + input + ": " + syllables);
 		} while (!input.endsWith("."));
+		
+		in.close();
 	}
 }

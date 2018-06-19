@@ -10,8 +10,8 @@ public class Rental {
     private ArrayList<Car> cars = new ArrayList<>();
 
     public Rental(int number, String date, int days) {
-        this.number = number;
-        this.date = date;
+        this.setNumber(number);
+        this.setDate(date);
         this.days = days;
     }
 
@@ -40,4 +40,20 @@ public class Rental {
     public void removeCar(Car car) {
         cars.remove(car);
     }
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
 }

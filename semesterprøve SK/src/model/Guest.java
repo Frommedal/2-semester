@@ -39,7 +39,8 @@ public class Guest implements Value {
         this.orders.add(order);
     }
 
-    private void removeOrderLines(Order order) {
+    @SuppressWarnings("unused")
+	private void removeOrderLines(Order order) {
         this.orders.remove(order);
     }
 

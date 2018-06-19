@@ -26,7 +26,7 @@ public class opgave1 {
 
         public BankAccount(double initialBalance) {
             balance = initialBalance;
-            uniqueAccountNumber = accountNumber;
+            setUniqueAccountNumber(accountNumber);
             accountNumber++;
         }
 
@@ -62,5 +62,13 @@ public class opgave1 {
         public double getBalance() {
             return balance;
         }
+
+		public int getUniqueAccountNumber() {
+			return uniqueAccountNumber;
+		}
+
+		public void setUniqueAccountNumber(int uniqueAccountNumber) {
+			this.uniqueAccountNumber = uniqueAccountNumber;
+		}
     }
 }

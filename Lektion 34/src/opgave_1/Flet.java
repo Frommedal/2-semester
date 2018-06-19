@@ -7,8 +7,6 @@ public class Flet {
 
     public static void main(String[] args) {
 
-        Customer Customer;
-
         Customer c1 = new Customer("Andersen", "Søren", 18);
         Customer c2 = new Customer("Mikkelsen", "Flemse", 42);
         Customer c3 = new Customer("Eriksen", "Henning", 53);
