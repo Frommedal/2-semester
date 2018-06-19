@@ -25,7 +25,7 @@ public class Spillermetoder {
         }
     }
 
-    public Spiller findScoreBinær(ArrayList<Spiller> spillere, int score) {
+    public Spiller findScoreBinaer(ArrayList<Spiller> spillere, int score) {
         boolean found = false;
         int left = 0;
         int right = spillere.size() - 1;

@@ -35,7 +35,7 @@ public class SpillerApp {
         // Opgave 4.2..
         System.out.println("Opgave 4.2");
         System.out.println("Hvem har scoret måske 32 mål?: \n" + metoder.findScoreLinier(spillerListe, 32));
-        System.out.println("Hvem har scoret måske 60 mål?: \n" + metoder.findScoreBinær(spillerListe2, 60));
+        System.out.println("Hvem har scoret måske 60 mål?: \n" + metoder.findScoreBinaer(spillerListe2, 60));
         System.out.println("");
 
         // Opgave 4.Tomas og Morten laver magi og sorteringsmetoder.

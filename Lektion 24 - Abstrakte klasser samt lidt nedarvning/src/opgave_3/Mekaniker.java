@@ -3,9 +3,9 @@ package opgave_3;
 public class Mekaniker extends Ansat {
     private int yearOfSvend = 0;
 
-    public Mekaniker(String name, String address, double payPerHour, int yearOfAnsættelse, int workWeek,
+    public Mekaniker(String name, String address, double payPerHour, int yearOfEmployement, int workWeek,
             int yearOfSvend) {
-        super(name, address, payPerHour, yearOfAnsættelse, workWeek);
+        super(name, address, payPerHour, yearOfEmployement, workWeek);
         this.yearOfSvend = yearOfSvend;
     }
 

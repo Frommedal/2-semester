@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public abstract class Ansat extends Person {
     private double payPerHour = 0.0;
-    private int yearOfAnsættelse = 0;
+    private int yearOfEmployement = 0;
     private int workWeek = 0;
 
-    public Ansat(String name, String address, double payPerHour, int yearOfAnsættelse, int workWeek) {
+    public Ansat(String name, String address, double payPerHour, int yearOfEmployement, int workWeek) {
         super(name, address);
         this.payPerHour = payPerHour;
-        this.yearOfAnsættelse = yearOfAnsættelse;
+        this.yearOfEmployement = yearOfEmployement;
         this.workWeek = workWeek;
     }
 
@@ -26,12 +26,12 @@ public abstract class Ansat extends Person {
         this.payPerHour = payPerHour;
     }
 
-    public int getYearOfAnsættelse() {
-        return yearOfAnsættelse;
+    public int getyearOfEmployement() {
+        return yearOfEmployement;
     }
 
-    public void setYearOfAnsættelse(int yearOfAnsættelse) {
-        this.yearOfAnsættelse = yearOfAnsættelse;
+    public void setyearOfEmployement(int yearOfEmployement) {
+        this.yearOfEmployement = yearOfEmployement;
     }
 
     public int getWorkWeek() {
@@ -46,12 +46,12 @@ public abstract class Ansat extends Person {
         return getPayPerHour() * getWorkWeek();
     }
 
-    public static double beregnSamletLøn(ArrayList<Ansat> ansatList) {
-        double samletLøn = 0.0;
+    public static double calculateTotalPay(ArrayList<Ansat> ansatList) {
+        double totalPay = 0.0;
         for (Ansat ansat : ansatList) {
-            samletLøn += ansat.getWeeklyPaycheck();
+        	totalPay += ansat.getWeeklyPaycheck();
         }
-        return samletLøn;
+        return totalPay;
     }
 
 }

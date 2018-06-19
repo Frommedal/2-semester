@@ -38,19 +38,19 @@ public class FravaersSystem {
      */
     public int samletFravaer(int[][] fravaer, int elevNr) {
 
-        int totalFravær = 0;
+        int totalAbsent = 0;
 
         for (int i = 0; i < fravaer.length; i++) {
             for (int j = 0; j < fravaer[i].length; j++) {
                 if (i == elevNr - 1) {
-                    totalFravær = totalFravær + fravaer[i][j];
+                	totalAbsent = totalAbsent + fravaer[i][j];
                 }
             }
         }
-        System.out.print("Det totale fravær for elev nummer " + elevNr + " er: " + totalFravær);
+        System.out.print("Det totale fravær for elev nummer " + elevNr + " er: " + totalAbsent);
         System.out.println();
         System.out.println();
-        return totalFravær;
+        return totalAbsent;
     }
 
     /**
@@ -64,17 +64,17 @@ public class FravaersSystem {
     DecimalFormat df = new DecimalFormat("####0.00");
 
     public double gennemsnit(int[][] fravaer, int elevNr) {
-        double totalFravær = 0.0;
+        double totalAbsent = 0.0;
         double gennemsnit = 0.0;
 
         for (int i = 0; i < fravaer.length; i++) {
             for (int j = 0; j < fravaer[i].length; j++) {
                 if (i == elevNr - 1) {
-                    totalFravær = totalFravær + fravaer[i][j];
+                	totalAbsent = totalAbsent + fravaer[i][j];
                     // System.out.println(totalFravær); // test for at se om den regner rigtigt.
                 }
             }
-            gennemsnit = totalFravær / 12;
+            gennemsnit = totalAbsent / 12;
         }
         System.out.print("Det gennemsnitlige fravær for elev nummer " + elevNr + " er: " + df.format(gennemsnit));
         System.out.println();
@@ -89,23 +89,23 @@ public class FravaersSystem {
      * @return
      */
     public int antalUdenFravaer(int[][] fravaer) {
-        int alleUdenFravær = 0;
-        int totalFravær = 0;
+        int allWithoutAbsent = 0;
+        int totalAbsent = 0;
 
         for (int i = 0; i < fravaer.length; i++) {
             for (int j = 0; j < fravaer[i].length; j++) {
-                totalFravær = totalFravær + fravaer[i][j];
+            	totalAbsent = totalAbsent + fravaer[i][j];
             }
-            if (totalFravær == 0) {
-                alleUdenFravær++;
+            if (totalAbsent == 0) {
+            	allWithoutAbsent++;
             }
-            totalFravær = 0;
+            totalAbsent = 0;
 
         }
-        System.out.print("Antallet af elever uden fravær er: " + alleUdenFravær);
+        System.out.print("Antallet af elever uden fravær er: " + allWithoutAbsent);
         System.out.println();
         System.out.println();
-        return alleUdenFravær;
+        return allWithoutAbsent;
     }
 
     /**
@@ -117,27 +117,27 @@ public class FravaersSystem {
      * @return
      */
     public int mestFravaer(int[][] fravaer) {
-        int højesteFravær = 0;
-        int totalFravær = 0;
+        int highestAbsent = 0;
+        int totalAbsent = 0;
         int elevNr = 0;
 
         for (int i = 0; i < fravaer.length; i++) {
             for (int j = 0; j < fravaer[i].length; j++) {
-                totalFravær = totalFravær + fravaer[i][j];
+            	totalAbsent = totalAbsent + fravaer[i][j];
             }
-            if (totalFravær > højesteFravær) {
-                højesteFravær = totalFravær;
+            if (totalAbsent > highestAbsent) {
+            	highestAbsent = totalAbsent;
                 elevNr = i + 1;
-                totalFravær = 0;
+                totalAbsent = 0;
             }
-            totalFravær = 0;
+            totalAbsent = 0;
 
         }
         System.out.print(
-                "Eleven med det højeste fravær var elev nummer: " + elevNr + ". Hans fravær var på: " + højesteFravær);
+                "Eleven med det højeste fravær var elev nummer: " + elevNr + ". Hans fravær var på: " + highestAbsent);
         System.out.println();
         System.out.println();
-        return højesteFravær;
+        return highestAbsent;
     }
 
     /**

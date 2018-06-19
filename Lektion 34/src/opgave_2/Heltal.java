@@ -9,7 +9,7 @@ public class Heltal {
         int[] s1 = { 2, 4, 6, 8, 10, 12, 14 };
         int[] s2 = { 1, 2, 4, 5, 6, 9, 12, 17 };
 
-        for (int i : fællesTal(s1, s2)) {
+        for (int i : commonNumbers(s1, s2)) {
             System.out.println(i);
         }
     }
@@ -19,7 +19,7 @@ public class Heltal {
      * fælles Krav: l1 og l2 er sorterede, indeholder ikke dubletter og indeholder
      * ikke tomme pladser
      */
-    public static int[] fællesTal(int[] s1, int[] s2) {
+    public static int[] commonNumbers(int[] s1, int[] s2) {
         int[] result = new int[s1.length + s2.length];
         int i1 = 0;
         int i2 = 0;

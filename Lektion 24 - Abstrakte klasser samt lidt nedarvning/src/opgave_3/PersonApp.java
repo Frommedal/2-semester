@@ -16,14 +16,14 @@ public class PersonApp {
         System.out.println(bla.getPayPerHour());
         System.out.println(bla.getWeeklyPaycheck());
 
-        Værkfører tgn = new Værkfører("Torbe Grove Nielsen", "Rosenhøj", 125.5, 2014, 37, 2012, 50);
-        System.out.println("Værkførerens tillæg er: " + tgn.getTillægTilLøn() + " DKK");
+        Foreman tgn = new Foreman("Torbe Grove Nielsen", "Rosenhøj", 125.5, 2014, 37, 2012, 50);
+        System.out.println("Foremans extra pay er: " + tgn.getExtraPay() + " DKK");
         System.out.println("Denne værkførers navn er: " + tgn.getName());
         System.out.println(tgn.getName() + "'s ugenlige løn er: " + tgn.getWeeklyPaycheck() + " DKK");
 
-        StableBoy mbø = new StableBoy("Martin Børkop", "Skanderborg", 95.0, 2017, 25, "Alt de andre ikke gider lave");
+        StableBoy mbo = new StableBoy("Martin Borkop", "Skanderborg", 95.0, 2017, 25, "Alt de andre ikke gider lave");
 
-        System.out.println(mbø.getABeastyName());
+        System.out.println(mbo.getABeastyName());
 
         Synsmand als = new Synsmand("Alexander Lynge Skou", "Silkeborgvej 22", 125.5, 2013, 37, 2013);
         als.setAntalSyn(10);
@@ -35,13 +35,13 @@ public class PersonApp {
         ansatList.add(flb);
         ansatList.add(tgn);
         ansatList.add(als);
-        ansatList.add(mbø);
+        ansatList.add(mbo);
 
         for (Ansat ansat : ansatList) {
             System.out.println(ansat.getName() + " har en ugeløn på " + ansat.getWeeklyPaycheck()); // bare som test
         }
-        Ansat.beregnSamletLøn(ansatList);
-        System.out.println("Samlet løn for alle ansatte er: " + Ansat.beregnSamletLøn(ansatList));
+        Ansat.calculateTotalPay(ansatList);
+        System.out.println("Samlet løn for alle ansatte er: " + Ansat.calculateTotalPay(ansatList));
     }
 
 }
