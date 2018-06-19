@@ -1,8 +1,5 @@
 package Opgave_3;
 
-import java.lang.reflect.Array;
-import java.util.Scanner;
-
 public class TeaterSal {
     public static void main(String[] args) {
 

@@ -6,8 +6,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
@@ -41,11 +39,11 @@ public class MainApp extends Application {
         pane.getChildren().add(omkreds);
         omkreds.setFill(Farve);
 
-        Circle højreøje = new Circle(175, 175, 12);
-        pane.getChildren().add(højreøje);
+        Circle rightEye = new Circle(175, 175, 12);
+        pane.getChildren().add(rightEye);
 
-        Circle venstreøje = new Circle(225, 175, 12);
-        pane.getChildren().add(venstreøje);
+        Circle leftEye = new Circle(225, 175, 12);
+        pane.getChildren().add(leftEye);
 
         Line mund = new Line(150, 225, 250, 225);
         pane.getChildren().add(mund);

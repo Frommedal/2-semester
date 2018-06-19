@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Mekaniker extends Person {
     private int yearOfSvend = 0;
-    private double timeLønSats = 0.0;
+    private double payPerHour = 0.0;
     private int workWeek = 37;
 
-    public Mekaniker(String name, String address, int yearOfSvend, double timeLønSats) {
+    public Mekaniker(String name, String address, int yearOfSvend, double payPerHour) {
         super(name, address);
         this.yearOfSvend = yearOfSvend;
-        this.timeLønSats = timeLønSats;
+        this.payPerHour = payPerHour;
     }
 
     public int getYearOfSvend() {
@@ -21,16 +21,16 @@ public class Mekaniker extends Person {
         this.yearOfSvend = yearOfSvend;
     }
 
-    public double getTimeLønSats() {
-        return timeLønSats;
+    public double getPayPerHour() {
+        return payPerHour;
     }
 
-    public void setTimeLønSats(double timeLønSats) {
-        this.timeLønSats = timeLønSats;
+    public void setPayPerHour(double payPerHour) {
+        this.payPerHour = payPerHour;
     }
 
     public double getWeeklyPaycheck() {
-        return timeLønSats * workWeek;
+        return payPerHour * workWeek;
     }
 
     public int getWorkWeek() {
@@ -41,11 +41,11 @@ public class Mekaniker extends Person {
         this.workWeek = workWeek;
     }
 
-    public static double beregnSamletLøn(ArrayList<Mekaniker> mekanikerList) {
-        double samletLøn = 0.0;
+    public static double calculateTotalPay(ArrayList<Mekaniker> mekanikerList) {
+        double totalPay = 0.0;
         for (Mekaniker mekaniker : mekanikerList) {
-            samletLøn += mekaniker.getWeeklyPaycheck();
+        	totalPay += mekaniker.getWeeklyPaycheck();
         }
-        return samletLøn;
+        return totalPay;
     }
 }

@@ -8,7 +8,6 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
@@ -58,8 +57,8 @@ public class MainApp extends Application {
         Line bund = new Line(70, 320, 350, 320);
         pane.getChildren().add(bund);
 
-        Rectangle dør = new Rectangle(140, 260, 30, 60);
-        pane.getChildren().add(dør);
+        Rectangle door = new Rectangle(140, 260, 30, 60);
+        pane.getChildren().add(door);
 
         Line gras1 = new Line(200, 320, 203, 310);
         pane.getChildren().add(gras1);

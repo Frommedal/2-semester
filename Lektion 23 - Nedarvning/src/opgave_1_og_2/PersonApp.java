@@ -13,11 +13,11 @@ public class PersonApp {
         Mekaniker bla = new Mekaniker("Benjamin Larsen", "Lidt flyvsk", 2018, 125.5);
         Mekaniker sje = new Mekaniker("Søren Jensen", "Juelsminde", 2016, 125.5);
         Mekaniker flb = new Mekaniker("Flemming Busk", "Lyngåvej", 2011, 135.5);
-        System.out.println(bla.getTimeLønSats());
+        System.out.println(bla.getPayPerHour());
         System.out.println(bla.getWeeklyPaycheck());
 
-        Værkfører tgn = new Værkfører("Torbe Grove Nielsen", "Rosenhøj", 2014, 125.5, 2017, 50);
-        System.out.println("Værkførerens tillæg er: " + tgn.getTillægTilLøn() + " DKK");
+        Foreman tgn = new Foreman("Torbe Grove Nielsen", "Rosenhøj", 2014, 125.5, 2017, 50);
+        System.out.println("Værkførerens tillæg er: " + tgn.getExtraPay() + " DKK");
         System.out.println("Denne værkførers navn er: " + tgn.getName());
         System.out.println(tgn.getName() + "'s ugenlige løn er: " + tgn.getWeeklyPaycheck() + " DKK");
 
@@ -35,8 +35,8 @@ public class PersonApp {
         for (Mekaniker mekaniker : mekanikerList) {
             System.out.println(mekaniker.getWeeklyPaycheck()); // bare som test
         }
-        Mekaniker.beregnSamletLøn(mekanikerList);
-        System.out.println("Samlet løn for alle mekanikere er: " + Mekaniker.beregnSamletLøn(mekanikerList));
+        Mekaniker.calculateTotalPay(mekanikerList);
+        System.out.println("Samlet løn for alle mekanikere er: " + Mekaniker.calculateTotalPay(mekanikerList));
     }
 
 }

@@ -62,11 +62,11 @@ public class SwimmerApp {
         // + (s1.getTrainingHours() + s2.getTrainingHours() + s3.getTrainingHours()) + "
         // om ugen.");
 
-        int samletTræning = 0;
+        int totalTraining = 0;
         for (Swimmer swimmer : swimmers) {
-            samletTræning += swimmer.getTrainingHours();
+        	totalTraining += swimmer.getTrainingHours();
         }
         System.out.println("");
-        System.out.println("Totale træningstid for alle svømmerne er: " + samletTræning + " timer om ugen.");
+        System.out.println("Totale træningstid for alle svømmerne er: " + totalTraining + " timer om ugen.");
     }
 }

@@ -2,10 +2,10 @@ package opgave_1_og_2;
 
 public class Synsmand extends Mekaniker {
     private int antalSyn = 0;
-    private double tillægPerSyn = 250.0;
+    private double extraPay = 250.0;
 
-    public Synsmand(String name, String address, int yearOfSvend, double timeLønSats) {
-        super(name, address, yearOfSvend, timeLønSats);
+    public Synsmand(String name, String address, int yearOfSvend, double payPerHour) {
+        super(name, address, yearOfSvend, payPerHour);
     }
 
     public int getAntalSyn() {
@@ -22,7 +22,7 @@ public class Synsmand extends Mekaniker {
 
     @Override
     public double getWeeklyPaycheck() {
-        return super.getWeeklyPaycheck() + (antalSyn * tillægPerSyn);
+        return super.getWeeklyPaycheck() + (antalSyn * extraPay);
     }
 
 }

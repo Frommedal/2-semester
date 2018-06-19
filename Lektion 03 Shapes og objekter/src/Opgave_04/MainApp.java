@@ -5,9 +5,6 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
@@ -35,8 +32,6 @@ public class MainApp extends Application {
     // ------------------------------------------------------------------------
 
     private void drawShapes(Pane pane) {
-        Color Farve = new Color(1, 0, 0, 0.5); // Kan også deffineres med de allerede givede farver.
-
         Circle inderste = new Circle(200, 200, 15);
         pane.getChildren().add(inderste);
 

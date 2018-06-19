@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.CubicCurve;
 import javafx.scene.shape.Polygon;
@@ -52,10 +51,10 @@ public class MainApp extends Application {
         mainpiltop.setFill(Color.WHITE);
         pane.getChildren().add(mainpiltop);
 
-        Text texttilhøjre = new Text(350, 140, "E45");
-        texttilhøjre.setFill(Color.WHITE);
-        texttilhøjre.setStyle("-fx-font: 52 arial;");
-        pane.getChildren().add(texttilhøjre);
+        Text textOnTheRight = new Text(350, 140, "E45");
+        textOnTheRight.setFill(Color.WHITE);
+        textOnTheRight.setStyle("-fx-font: 52 arial;");
+        pane.getChildren().add(textOnTheRight);
 
         CubicCurve kurvepil = new CubicCurve(180, 150, 235, 170, 272.50, 195, 272.50, 250);
         kurvepil.setStroke(Color.WHITE);

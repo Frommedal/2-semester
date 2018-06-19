@@ -1,11 +1,6 @@
 package Test;
 
 import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.CubicCurve;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.image.Image;
 import javafx.scene.paint.ImagePattern;
