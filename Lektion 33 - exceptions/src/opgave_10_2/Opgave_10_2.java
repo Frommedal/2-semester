@@ -13,7 +13,7 @@ public class Opgave_10_2 {
 
         try {
             scan = new Scanner(file);
-            output = new PrintWriter("output.txt");
+            output = new PrintWriter("denher.txt");
         } catch (FileNotFoundException e) {
             System.out.println("ingen fil fundet, program lukker!");
             return;
