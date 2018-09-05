@@ -19,6 +19,7 @@ public class testApp {
 		st2.addKarakter(5);
 		st3.addKarakter(5);
 		st3.addKarakter(5);
+		st3.addKarakter(12);
 		
 		
 		System.out.println(s1);
